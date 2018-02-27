@@ -28,8 +28,8 @@
   export default {
     props: ['workout'],
     computed: {
-      hours () { return Math.floor(this.workout.totalTime / 360) },
-      minutes () { return Math.floor(this.workout.totalTime / 60) },
+      hours () { return Math.floor(this.workout.totalTime / 3600) },
+      minutes () { return Math.floor((this.workout.totalTime % 3600) / 60) },
       seconds () { return this.workout.totalTime % 60 },
       text () {
         return this.addZero(this.hours) +
